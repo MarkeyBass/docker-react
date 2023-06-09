@@ -10,4 +10,4 @@ before_install: # commands befor running the test
 # if a test returns with status code different then 0 it will assume that the test faild
 script: 
   # travisCI assums that tests run ones ad quit - not the default behavior of npm run test command thats why -e CI-true
-  - docker run -e CI-true markeybass/docker-react npm run test
+  - docker run -e CI=true markeybass/docker-react npm run test
