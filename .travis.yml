@@ -11,3 +11,15 @@ before_install: # commands befor running the test
 script: 
   # travisCI assums that tests run ones ad quit - not the default behavior of npm run test command thats why -e CI-true
   - docker run -e CI=true markeybass/docker-react npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "react-docker"
+  env: "React-docker-env"
+  bucket_name: "elasticbeanstalk-us-east-1-504406221982" # S3 bucket
+  bucket_path: "react-docker" # path inside the S3 bucket
+  on:
+    branch: main
+  aws_access_key_id: $AWS_ACCESS_KEY_ID
+  aws_secret_access_key: "$AWS_SECRET_ACCESS_KEY"
