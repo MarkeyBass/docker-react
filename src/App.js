@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import hipos from "./hipos.jpg"
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload...❗❗❗ Yoo hoo❗❗❗ 
         </p>
+        <img style={{maxWidth: "500px"}} src={hipos}></img>
         <a
           className="App-link"
           href="https://reactjs.org"
